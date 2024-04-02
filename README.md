@@ -12,12 +12,12 @@ A simple helper function to generate GraphQL queries using plain JavaScript Obje
 
 ## Install
 
-`npm install gql-query-builder --save` or `yarn add gql-query-builder`
+`npm install @souagrosolucoes/gql-query-builder --save` or `yarn add @souagrosolucoes/gql-query-builder`
 
 ## Usage
 
 ```typescript
-import * as gql from 'gql-query-builder'
+import * as gql from '@souagrosolucoes/gql-query-builder'
 
 const query = gql.query(options: object)
 const mutation = gql.mutation(options: object)

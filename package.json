@@ -1,10 +1,10 @@
 {
-  "name": "gql-query-builder",
-  "version": "3.8.0",
+  "name": "@souagrosolucoes/gql-query-builder",
+  "version": "1.0.0",
   "description": "Simple GraphQL Query Builder",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com:atulmy/gql-query-builder.git"
+    "url": "git+https://github.com:souagrosolucoes/gql-query-builder.git"
   },
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
@@ -27,9 +27,9 @@
   "author": "Atul Yadav <atul.12788@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/atulmy/gql-query-builder/issues"
+    "url": "https://github.com/souagrosolucoes/gql-query-builder/issues"
   },
-  "homepage": "https://github.com/atulmy/gql-query-builder",
+  "homepage": "https://github.com/souagrosolucoes/gql-query-builder",
   "devDependencies": {
     "@types/jest": "^28.1.6",
     "husky": "^8.0.1",
@@ -55,5 +55,8 @@
   "jest": {
     "preset": "ts-jest"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
 }

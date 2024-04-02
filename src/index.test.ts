@@ -698,10 +698,10 @@ describe("Mutation", () => {
 
     expect(query).toEqual({
       query: `mutation ($name: String, $thought: String) {
-  thoughtCreate (name: $name, thought: $thought) {
+      thoughtCreate (name: $name, thought: $thought) {
     id
   }
-}`,
+    }`,
       variables: {
         name: "Tyrion Lannister",
         thought: "I drink and I know things.",
@@ -724,10 +724,10 @@ describe("Mutation", () => {
 
     expect(query).toEqual({
       query: `mutation ($name: String, $thought: String) {
-  myThoughtCreate: thoughtCreate (name: $name, thought: $thought) {
+      myThoughtCreate: thoughtCreate (name: $name, thought: $thought) {
     id
   }
-}`,
+    }`,
       variables: {
         name: "Tyrion Lannister",
         thought: "I drink and I know things.",
@@ -763,13 +763,13 @@ describe("Mutation", () => {
 
     expect(query).toEqual({
       query: `mutation ($name: String, $thought: String, $character: String, $quote: String) {
-  myThoughtCreate: thoughtCreate (name: $name, thought: $thought) {
+      myThoughtCreate: thoughtCreate (name: $name, thought: $thought) {
     id
   }
   yourThoughtCreate: thoughtCreate (character: $character, quote: $quote) {
     id
   }
-}`,
+    }`,
       variables: {
         name: "Tyrion Lannister",
         thought: "I drink and I know things.",
@@ -792,10 +792,10 @@ describe("Mutation", () => {
 
     expect(query).toEqual({
       query: `mutation ($name: String, $email: String!, $password: String!) {
-  userSignup (name: $name, email: $email, password: $password) {
+      userSignup (name: $name, email: $email, password: $password) {
     userId
   }
-}`,
+    }`,
       variables: {
         name: "Jon Doe",
         email: "jon.doe@example.com",
@@ -826,13 +826,13 @@ describe("Mutation", () => {
 
     expect(query).toEqual({
       query: `mutation ($name: String, $thought: String, $prayer: String) {
-  thoughtCreate (name: $name, thought: $thought) {
+      thoughtCreate (name: $name, thought: $thought) {
     id
   }
   prayerCreate (name: $name, prayer: $prayer) {
     id
   }
-}`,
+    }`,
       variables: {
         name: "Tyrion Lannister",
         thought: "I drink and I know things.",
@@ -869,13 +869,13 @@ describe("Mutation", () => {
 
     expect(query).toEqual({
       query: `mutation ($id0: ID, $id1: ID) {
-  delete0: deleteUser (id: $id0) {
+      delete0: deleteUser (id: $id0) {
     id
   }
   delete1: deleteUser (id: $id1) {
     id
   }
-}`,
+    }`,
       variables: {
         id0: "user_1234",
         id1: "user_5678",
@@ -896,10 +896,10 @@ describe("Mutation", () => {
 
     expect(query).toEqual({
       query: `mutation ($name: String, $email: String!, $password: String!) {
-  userSignup (name: $name, email: $email, password: $password) {
+      userSignup (name: $name, email: $email, password: $password) {
     id
   }
-}`,
+    }`,
       variables: {
         name: "Jon Doe",
         email: "jon.doe@example.com",
@@ -923,10 +923,10 @@ describe("Mutation", () => {
 
     expect(query).toEqual({
       query: `mutation ($phone: PhoneNumber!) {
-  userPhoneNumber (phone: $phone) {
+      userPhoneNumber (phone: $phone) {
     id
   }
-}`,
+    }`,
       variables: {
         phone: { prefix: "+91", number: "9876543210" },
       },
@@ -940,8 +940,8 @@ describe("Mutation", () => {
 
     expect(query).toEqual({
       query: `mutation  {
-  logout  
-}`,
+      logout  
+    }`,
       variables: {},
     });
   });
@@ -960,10 +960,10 @@ describe("Mutation", () => {
 
     expect(query).toEqual({
       query: `mutation  {
-  namespaceField  {
+      namespaceField  {
     innerMutation  { id }
   }
-}`,
+    }`,
       variables: {},
     });
   });
@@ -984,10 +984,10 @@ describe("Mutation", () => {
 
     expect(query).toEqual({
       query: `mutation ($name: String) {
-  namespaceField  {
+      namespaceField  {
     innerMutation (name: $name) { id }
   }
-}`,
+    }`,
       variables: { name: "stringy" },
     });
   });
@@ -1022,18 +1022,18 @@ describe("Mutation", () => {
 
     expect(query).toEqual({
       query: `mutation ($nameB: String, $nameA: String) {
-  namespaceField  {
+      namespaceField  {
     mutationA (nameA: $nameA) { id }
   }
   namespaceField  {
     mutationB (nameB: $nameB) { id }
   }
-}`,
+    }`,
       variables: { nameA: "A", nameB: "B" },
     });
   });
 
-  test.only("generates mutation with operation name", () => {
+  test("generates mutation with operation name", () => {
     const query = queryBuilder.mutation(
       [
         {
